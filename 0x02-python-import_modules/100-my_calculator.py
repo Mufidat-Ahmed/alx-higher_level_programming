@@ -6,14 +6,14 @@ if __name__ == "__main__":
     if argc != 4:
         print('Usage: {} <a> <operator> <b>'.format(argv[0]))
         exit(1)
-        sign = {'+': add, '-': sub, '*': mul, '/': div}
-        if argv[2] in sign:
-            a = int(argv[1])
-            b = int(argv[3])
-            signs = sign[argv[2]]
-            result = signs(a, b)
-            print('{:d} {:s} {:d} = {:d}'.format(a, argv[2], b, result))
-        else:
-            print('Unknown operator. Available operators: +, -, * and /')
-            exit(1)
-            exit(0)
+    operator = {'+': add, '-': sub, '*': mul, '/': div}
+    if argv[2] in operator:
+        num1 = int(argv[1])
+        num2 = int(argv[3])
+        op = operator[argv[2]]
+        result = op(num1, num2)
+        print('{:d} {:s} {:d} = {:d}'.format(num1, argv[2], num2, result))
+    else:
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
+    exit(0)
