@@ -1,17 +1,31 @@
 #!/usr/bin/python3
+"""Define a class"""
+
+
 class Square:
+    """rep a class"""
+
     def __init__(self, size=0):
+
         self.size = size
+
         def size(self):
+
             return (self.__size)
+
         def size(self, value):
+
             if not isinstance(self, size):
+
                 raise TypeError("size must be an integer")
             elif size < 0:
                 raise ValueError("size must be >= 0")
             self.__size = value
+
             def area(self):
+
                 return (self.__size * self.__size)
+
             def my_print(self):
                 for i in range(0, self.__size):
                     print('#', end="")
