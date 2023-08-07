@@ -30,7 +30,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """set or get height of rectangle"""
+        """setor get height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -42,18 +42,18 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """returns the area of the rectangle"""
+        """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """returns the perimeter of the rectangle"""
+        """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """returns the printable rep of the rectangle"""
-        if self.__width or self.__height == 0:
+        """represents the rectangle with #"""
+        if self.__width == 0 or self.__height == 0:
             return ("")
         cat = []
         for i in range(self.__height):
