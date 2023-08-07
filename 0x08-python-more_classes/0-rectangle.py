@@ -3,4 +3,5 @@
 
 
 class Rectangle:
+    """Rep a rectangle"""
     pass
