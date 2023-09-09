@@ -7,11 +7,12 @@
 
 #2: Adding float
 >>> add_integer(4.4, 3.3)
-7.7
+7
 
 #3: adding a float and a string
 >>> add_integer(4.4, "7")
 Traceback (most recent call last):
+	...
 TypeError: a must be an integer or b must be an integer
 
 #4 adding an interger and string
