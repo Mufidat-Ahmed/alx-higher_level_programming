@@ -1,0 +1,43 @@
+#Test casses for add_integer(a, b=98) function
+>>> add_integer = __import__('0-add_integer').add_integer
+
+#1: Adding integer
+>>> add_integer(4, 7)
+11
+
+#2: Adding float
+>>> add_integer(4.4, 3.3)
+7.7
+
+#3: adding a float and a string
+>>> add_integer(4.4, "7")
+Traceback (most recent call last):
+TypeError: a must be an integer or b must be an integer
+
+#4 adding an interger and string
+>>> add_integer(4, "hi")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+#5 adding an integer an a negative number
+>>> add_integer(4, -2)
+2
+
+#6 adding a float and a negative number
+>>> add_integer(4.4, -2)
+2
+
+#7 adding an integer and nothing
+>>> add_integer(4, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+#8 adding nothing
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+#9: adding two strings
+>>> add_integer("hi", "dear")
+Traceback (most recent call last):
+TypeError: a must be an integer or b must be an integer
