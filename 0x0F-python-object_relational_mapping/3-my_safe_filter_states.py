@@ -8,26 +8,14 @@ import MySQLdb
 import sys
 
 
-def search_states(username, password, database, state_name):
-    db = MySQLdb.connect
-    (host="localhost", port=3306, user=username, passwd=password, db=database)
-    cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY states.id;"
-    cursor.execute(query, (state_name,))
-    results = cursor.fetchall()
-    for row in results:
-        print(row)
-    cursor.close()
-    db.close()
-
-
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print
-        ("Usage: ./script.py <username> <password> <database> <state_name>")
-    else:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        state_name = sys.argv[4]
-        search_states(username, password, database, state_name)
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cursor = db.cursor()
+    match = sys.argv[4]
+    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    result = cur.fetchall()
+    for row in result:
+        print(row)
+    cur.close()
+    db.close()

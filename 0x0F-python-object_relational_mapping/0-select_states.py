@@ -4,23 +4,14 @@ import MySQLdb
 import sys
 
 
-def lists(username, password, database):
+if __name__ == "__main__":
     db = MySQLdb.connect
-    ("localhost", port=3306, user=username, passwd=password, db=database)
+    (host="localhost", user=sys.argv[1],
+                passwd=sys.argv[2], db=sys.argv[3], port=3306))
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY states.id;")
+    cursor.execute("SELECT * FROM states")
     result = cursor.fetchall()
     for row in result:
         print(row)
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
-    else:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        lists(username, password, database)
